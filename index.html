@@ -1,0 +1,195 @@
+.tudo-border-box {
+box-sizing: border-box;
+}
+
+
+.header-urna {
+border: solid;
+background-color: #565656;
+padding: 30px;
+text-align: center;
+font-size: 35px;
+color: white;
+}
+
+.nav-urna {
+float: right;
+width: 30%;
+border: solid;
+height: 400px; /* only for demonstration, should be removed */
+background: #565656;
+color: white;
+padding: 20px;
+}
+
+
+.nav-urna ul {
+list-style-type: none;
+padding: 0;
+}
+
+.article-urna {
+float: left;
+padding: 20px;
+/* border: solid; */
+width: 70%;
+background-color: #f1f1f1;
+height: 400px; /* only for demonstration, should be removed */
+}
+
+.section-urna:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.footer-urna {
+border: solid;
+background-color: #565656;
+padding: 10px;
+text-align: center;
+color: white;
+}
+
+@media (max-width: 600px) {
+.nav-urna, .article-urna {
+width: 100%;
+height: auto;
+}
+}
+<link rel="stylesheet" type="text/css" media="screen"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<div id="urnaDigital" class="form-control" style="border: solid;">
+  <header class="tudo-border-box header-urna">
+    <h2 class="tudo-border-box">Urna Digital</h2>
+  </header>
+
+  <section class="tudo-border-box section-urna">
+
+    <article class="tudo-border-box article-urna">
+      <h1 class="tudo-border-box">Digite o numero do seu candidato</h1>
+      <!-- Aqui vao dois quadrados, um para cada numero, depois que digitado os dois numeros, busco o candidato, caso não existir o numero na base de dados pergunto se o usuario quer anular voto, caso existir, dou a opção de confirmar ou corrigir, caso for clicado o botão branco entao vou pra tela de confirmar ou corrigir, e caso clicar no corrigir, limpo os dois campos de numeros.
+  <br>			    
+  Um ajuste que tenho que fazer, é para celular, botoes de numero ficam  zuados.
+  <br>
+  alem de ver uns erros do console f12 -->
+
+      <div id="numerosCandidato" class="row" style="height:280px;">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-2" id="digito1" style="border:solid; font-size: 170px;">
+        </div>
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2" id="digito2" style="border:solid; font-size: 170px;">
+        </div>
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-1">
+        </div>
+      </div>
+
+    </article>
+
+    <nav class="tudo-border-box nav-urna">
+
+      <div class="row">
+        <!--  <div class="btn-group"> -->
+        <div class="col-xs-4">
+          <button type="button" id="btn1" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">1</button>
+        </div>
+        <div class="col-xs-4">
+          <button type="button" id="btn2" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">2</button>
+        </div>
+        <div class="col-xs-4">
+          <button type="button" id="btn3" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">3</button>
+        </div>
+        <!-- </div>  -->
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <button type="button" id="btn4" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">4</button>
+        </div>
+        <div class="col-xs-4">
+          <button type="button" id="btn5" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">5</button>
+        </div>
+        <div class="col-xs-4">
+          <button type="button" id="btn6" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">6</button>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <button type="button" id="btn7" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">7</button>
+        </div>
+        <div class="col-xs-4">
+          <button type="button" id="btn8" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">8</button>
+        </div>
+        <div class="col-xs-4">
+          <button type="button" id="btn9" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">9</button>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+          <button type="button" id="btn0" class="btn btn-primary btn-lg"
+            style=" background-color: black; border-color: black;">0</button>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+
+      <div class="row">
+        <br>
+      </div>
+
+      <div class="row">
+        <div class="btn-group">
+
+          <button type="button" class="btn btn-default " id="btnBranco">BRANCO</button>
+
+          <button type="button" class="btn btn-warning " id="btnCorrige"
+            style="background-color: #fb3f14; border-color: #fb3f14;">CORRIGE</button>
+
+          <button type="button" class="btn btn-success " id="btnConfirma">CONFIRMA</button>
+
+        </div>
+      </div>
+
+    </nav>
+
+
+  </section>
+
+  <footer class="tudo-border-box footer-urna">
+    <p class="tudo-border-box">
+      Esse simulador funciona da mesma forma que uma urna eletronica,
+      você digita o numero de seu candidato a presidencia e pressionar Confirma.
+      Caso digitou o numero errado clique em Corrige.
+      Caso desejar votar em branco, clique em Branco.
+    </p>
+  </footer>
+</div>
